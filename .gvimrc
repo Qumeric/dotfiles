@@ -8,4 +8,4 @@ set guioptions-=r
 set guioptions-=b
 
 " Set font
-set guifont=DejaVu\ Sans\ Mono\ 12
+set guifont=Monofur\ 14

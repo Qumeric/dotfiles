@@ -1,6 +1,6 @@
-" Basic
 set history=1024
 set nocompatible
+set showtabline=0
 filetype off    " Required by Vundle
 
 " UI
@@ -14,9 +14,11 @@ set ignorecase
 set hlsearch
 set showmatch
 
-set noeb vb t_vb=   " No bells
-
 set lazyredraw
+
+" Bells
+set noeb vb t_vb=
+au GUIEnter * set vb t_vb=" Basic
 
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -24,11 +26,15 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'gerw/vim-latex-suite'
+let g:tex_flavor='latex'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'bling/vim-airline'
 "Bundle 'wincent/Command-T'
 
 " Colors and fonts 
@@ -55,6 +61,9 @@ set smartindent
 " Word wrap
 set formatoptions+=l
 set lbr
+
+" Airline
+set laststatus=2 
 
 " Last
 filetype plugin indent on
