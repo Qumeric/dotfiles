@@ -16,7 +16,6 @@ set showmatch
 
 set lazyredraw
 
-set list
 set listchars=tab:▸\ ,eol:¬
 map <F12> :set list!<CR>
 
@@ -35,8 +34,6 @@ let g:tex_flavor='latex'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'bling/vim-airline'
 "Bundle 'wincent/Command-T'
@@ -66,8 +63,17 @@ set smartindent
 set formatoptions+=l
 set lbr
 
+" Bindings
+map <F12> :set list!<CR>
+
 " Airline
-set laststatus=2 
+set laststatus=2
+
+let g:airline_powerline_fonts=1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
 
 " Last
 filetype plugin indent on

@@ -1,4 +1,4 @@
-" Disable ool and menu bars
+" Disable tool and menu bars
 set guioptions-=m
 set guioptions-=T
 
