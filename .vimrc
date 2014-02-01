@@ -1,6 +1,6 @@
 set history=1024
 set nocompatible
-set showtabline=0
+set shell=/bin/sh   " POSIX-Compliant
 filetype off    " Required by Vundle
 
 " UI
@@ -19,7 +19,8 @@ set lazyredraw
 set listchars=tab:▸\ ,eol:¬
 map <F12> :set list!<CR>
 
-" Bells
+set showtabline=0
+
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=" Basic
 
@@ -31,11 +32,11 @@ Bundle 'gmarik/vundle'
 
 Bundle 'gerw/vim-latex-suite'
 let g:tex_flavor='latex'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'bling/vim-airline'
+Bundle 'justinmk/vim-sneak'
+Bundle 'itchyny/lightline.vim'
 "Bundle 'wincent/Command-T'
 
 " Colors and fonts 
@@ -66,14 +67,36 @@ set lbr
 " Bindings
 map <F12> :set list!<CR>
 
-" Airline
+" Lightline 
 set laststatus=2
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'MyFugitive',
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '|' }
+      \ }
 
-let g:airline_powerline_fonts=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
+function! MyFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
+endfunction
 
 " Last
-filetype plugin indent on
+filetype plugin indent on 
