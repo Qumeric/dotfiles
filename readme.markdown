@@ -7,5 +7,7 @@ Vim
 i3
 --
 **Print screen** Make a screenshot.
+
 **Mod+plus** Sound up.
+
 **Mod+minus** Sound down.
