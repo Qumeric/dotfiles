@@ -1,3 +1,4 @@
+" Basic
 set history=1024
 set nocompatible
 set shell=/bin/sh   " POSIX-Compliant
@@ -16,11 +17,14 @@ set showmatch
 
 set lazyredraw
 
+" Beautiful window separators
+set fillchars=stl:\ ,stlnc:\ ,vert:│
+
+" Show spaces and tabs [F12]
 set listchars=tab:▸\ ,eol:¬
 map <F12> :set list!<CR>
 
-set showtabline=0
-
+" No bells
 set noeb vb t_vb=
 au GUIEnter * set vb t_vb=" Basic
 
@@ -33,12 +37,17 @@ Bundle 'gmarik/vundle'
 Bundle 'gerw/vim-latex-suite'
 let g:tex_flavor='latex'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'hdima/python-syntax'
+let python_highlight_all = 1
+Bundle 'ajford/vimkivy'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-surround'
-Bundle 'tope/vim-repeat'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
 Bundle 'justinmk/vim-sneak'
 Bundle 'itchyny/lightline.vim'
+Bundle 'klen/python-mode'
+let g:pymode_rope = 0
 "Bundle 'wincent/Command-T'
 
 " Colors and fonts 
@@ -102,3 +111,5 @@ endfunction
 
 " Last
 filetype plugin indent on 
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/

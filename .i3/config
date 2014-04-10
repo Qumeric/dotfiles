@@ -102,3 +102,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command sh ~/mystatus.sh
 }
+
+exec --no-startup-id imlibsetroot ~/.bg.png
