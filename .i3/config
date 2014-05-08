@@ -11,7 +11,8 @@ bindcode $mod+86 exec amixer sset Master 1dB+
 bindcode $mod+82 exec amixer sset Master 1dB- 
 
 # make screenshot
-bindsym Print exec scrot -e 'mv $f ~/'
+bindsym --release Print exec --no-startup-id scrot -s -e 'mv $f ~/'
+bindsym $mod+Print exec scrot -e 'mv $f ~/'
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -104,3 +105,4 @@ bar {
 }
 
 exec --no-startup-id imlibsetroot ~/.bg.png
+exec xflux -l 55.45 -g 37.37 -k 3800

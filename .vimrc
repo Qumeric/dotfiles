@@ -1,4 +1,7 @@
 " Basic
+set nobomb  " No Byte Order Mark
+set exrc    " Load local .vimrc
+set secure  " Don't let local .vimrc do dangerous things
 set history=1024
 set nocompatible
 set shell=/bin/sh   " POSIX-Compliant
@@ -22,6 +25,7 @@ set fillchars=stl:\ ,stlnc:\ ,vert:│
 
 " Show spaces and tabs [F12]
 set listchars=tab:▸\ ,eol:¬
+set list
 map <F12> :set list!<CR>
 
 " No bells
@@ -29,26 +33,33 @@ set noeb vb t_vb=
 au GUIEnter * set vb t_vb=" Basic
 
 " Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'gerw/vim-latex-suite'
+Plugin 'raimondi/delimitMate'
+Plugin 'gerw/vim-latex-suite'
 let g:tex_flavor='latex'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'hdima/python-syntax'
+Plugin 'qumeric/python-syntax'
 let python_highlight_all = 1
-Bundle 'ajford/vimkivy'
-Bundle 'tomasr/molokai'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-fugitive'
-Bundle 'justinmk/vim-sneak'
-Bundle 'itchyny/lightline.vim'
-Bundle 'klen/python-mode'
+Plugin 'ajford/vimkivy'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'justinmk/vim-sneak'
+Plugin 'itchyny/lightline.vim'
+Plugin 'klen/python-mode'
 let g:pymode_rope = 0
-"Bundle 'wincent/Command-T'
+Plugin 'valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomasr/molokai'
+call vundle#end()
+"Plugin 'wincent/Command-T'
 
 " Colors and fonts 
 colorscheme molokai
@@ -63,12 +74,10 @@ set nowb
 set noswapfile
 
 " Tabs
-set expandtab
-set smarttab
-set shiftwidth=4
 set tabstop=4
-
-set autoindent
+set shiftwidth=4
+set smarttab
+set expandtab
 set smartindent
 
 " Word wrap

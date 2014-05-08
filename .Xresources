@@ -4,35 +4,70 @@ URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
 URxvt.font: xft:Monofur:size=14
 
-!urxvt color scheme:
+! --- ~/.Xresources ------------------------------------------------------------
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
 
-URxvt*background: #1B1D1E
-URxvt*foreground: #F8F8F2
+! --- special colors ---
 
-URxvt*colorUL: #86a2b0
+*background: #1b1d1e
+*foreground: #d9e6f2
+
+! --- standard colors ---
 
 ! black
-URxvt*color0  : #2E3436
-URxvt*color8  : #555753
+*color0: #000000
+
+! bright_black
+*color8: #262626
+
 ! red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
+*color1: #e14141
+
+! bright_red
+*color9: #ee9292
+
 ! green
-URxvt*color2  : #4E9A06
-URxvt*color10 : #8AE234
+*color2: #41e141
+
+! bright_green
+*color10: #92ee92
+
 ! yellow
-URxvt*color3  : #C4A000
-URxvt*color11 : #FCE94F
+*color3: #e1e141
+
+! bright_yellow
+*color11: #eeee92
+
 ! blue
-URxvt*color4  : #3465A4
-URxvt*color12 : #729FCF
+*color4: #4141e1
+
+! bright_blue
+*color12: #9292ee
+
 ! magenta
-URxvt*color5  : #75507B
-URxvt*color13 : #AD7FA8
+*color5: #e141e1
+
+! bright_magenta
+*color13: #ee92ee
+
 ! cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #34E2E2
+*color6: #41e1e1
+
+! bright_cyan
+*color14: #92eeee
+
 ! white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
+*color7: #d9d9d9
+
+! bright_white
+*color15: #ffffff
+
+
+! ------------------------------------------------------------------------------
+! --- end of terminal colors section -------------------------------------------
+! ------------------------------------------------------------------------------
 

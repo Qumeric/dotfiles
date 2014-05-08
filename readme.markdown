@@ -6,7 +6,10 @@ Vim
 
 i3
 --
-**Print screen** Make a screenshot.
+
+**Print** Make a screenshot of a selected area.
+
+**Mod+Print** Make a screenshot.
 
 **Mod+plus** Sound up.
 
