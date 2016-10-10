@@ -2,6 +2,7 @@ Bindings
 ============
 Vim
 ---
+**F3** Use autoformat.
 **F12** Turn on/off highlighting tabs and ends of lines.
 
 i3
